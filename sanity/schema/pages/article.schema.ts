@@ -10,7 +10,11 @@ export const article = defineType({
         {
             name: "general",
             title: "Generelt"
-        }
+        },
+        {
+			name: 'byline',
+			title: 'Byline',
+		},
     ],
     fields: [
         {
@@ -32,5 +36,25 @@ export const article = defineType({
             name: "mainImage",
             group: "general"
         }),
+        {
+            title: "Ingress",
+            name: "entry",
+            type: "simpleRichText",
+            group: "general",
+        },
+        {   
+            name: "content",
+            type: "richText",
+            group: "general",
+        },
+        {
+            name: "publishedAt",
+            type: "datetime",
+            title: "Pulisert",
+            description: "Dato for publisering av artikkelen",
+            group: "byline",
+            initialValue: new Date().toISOString(),
+            validation: (Rule) => Rule.required(),
+        },  
     ]
 })
