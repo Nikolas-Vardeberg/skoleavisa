@@ -7,6 +7,11 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      aeronaut : [
+        "var(--font-aeronaut)"
+      ]
+    },
     extend: {
       colors: {
         background: "var(--background)",
