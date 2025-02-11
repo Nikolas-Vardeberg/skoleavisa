@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
-import Menu from "@/common/components/Menu";
 
 const aeronaut = localFont({
   variable: "--font-aeronaut",
@@ -18,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="no">
+    <html lang="no" suppressHydrationWarning className={`${aeronaut.variable}`}>
       {children}
     </html>
   );

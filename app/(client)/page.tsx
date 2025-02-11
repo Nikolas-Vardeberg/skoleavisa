@@ -1,3 +1,4 @@
+import HomeView from "@/common/components/views/home-view";
 import { ARTICLES_QUERY } from "@/common/queries/pages/article.queries";
 import { sanityFetch } from "@/sanity/lib/live";
 
@@ -7,10 +8,6 @@ export default async function Home() {
   })
 
   return (
-    <div className="flex flex-col">
-      <pre>
-        {JSON.stringify(initial, undefined, 2)}
-      </pre>
-    </div>
+    <HomeView data={initial.data} />
   );
 }
