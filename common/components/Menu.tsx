@@ -1,6 +1,16 @@
 import { MenuIcon, Search, SearchIcon, User } from "lucide-react";
 import Link from "next/link";
 import { Input } from "./ui/input";
+import { ModeToggle } from "./theme-toggle";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+  } from "@/common/components/ui/dropdown-menu";
+  
 
 
 export default function Menu() {
@@ -27,9 +37,21 @@ export default function Menu() {
 
                 <button type="button">
                     <span className="flex items-center justify-center lead gap-x-2">
-                        <MenuIcon className="size-6" />
+                        <DropdownMenu>
+                            <DropdownMenuTrigger>
+                                <MenuIcon className="size-6" />
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent>
+                                <DropdownMenuItem>
+                                    <ModeToggle />
+                                </DropdownMenuItem>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                     </span>
                 </button>
+                
+
+                
 
                 <Link href="/sign-in">
                     <span className="flex items-center justify-center lead gap-x-2">

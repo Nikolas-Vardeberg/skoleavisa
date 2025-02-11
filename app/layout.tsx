@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 import Menu from "@/common/components/Menu";
+import { ThemeProvider } from "@/common/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${aeronaut.variable}  antialiased`}
-      >
+      <body>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          />
         <Menu />
         {children}
       </body>
