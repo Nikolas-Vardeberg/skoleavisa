@@ -1,5 +1,6 @@
 import { MenuIcon, Search, SearchIcon, User } from "lucide-react";
 import Link from "next/link";
+import { Input } from "./ui/input";
 
 
 export default function Menu() {
