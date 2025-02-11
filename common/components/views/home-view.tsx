@@ -5,7 +5,7 @@ import type { Article } from "@/common/types/pages/article.types";
 export default function HomeView({data: data}: { data: Article }) {
     
     const renderArticles = () => (
-        <div>
+        <div className="flex justify-between">
             <pre>
                 {JSON.stringify(data, undefined, 2)}
             </pre>

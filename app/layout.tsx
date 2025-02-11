@@ -1,3 +1,4 @@
+import { QueryProvider } from "@/common/providers/query-provider";
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 
@@ -18,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="no" suppressHydrationWarning className={`${aeronaut.variable}`}>
-      {children}
+      <QueryProvider>
+        {children}
+      </QueryProvider>
     </html>
   );
 }
