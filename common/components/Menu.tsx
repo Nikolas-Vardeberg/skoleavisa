@@ -16,14 +16,12 @@ export default function Menu() {
                 Skolebladet
             </Link>
 
-            <div className="w-full hidden md:block">
+            <div className="flex items-center justify-center gap-x-8">
                 <input 
                     className="w-full bg-slate-200 placeholder:text-black text-lg py-3 px-4 outline-none"
                     placeholder="Søk..."
                 />
-            </div>
 
-            <div className="flex items-center justify-center gap-x-8">
                 <Link href="/sok">
                     <span className="flex items-center justify-center text-black dark:text-white lead gap-x-2">
                         <SearchIcon className="size-6" />
