@@ -38,9 +38,10 @@ export default function RootLayout({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          />
+          >
         <Menu />
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );
