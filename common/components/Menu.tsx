@@ -52,6 +52,7 @@ export default function Menu() {
                                 </DropdownMenuItem>
                                 <DropdownMenuItem onClick={() => setTheme("dark")}>
                                     <Moon className="text-black dark:text-white" /> Mørk
+                                    
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
