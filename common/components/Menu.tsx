@@ -18,7 +18,7 @@ export default function Menu() {
 
             <div className="flex items-center justify-center gap-x-8">
                 <input 
-                    className="w-full bg-slate-200 placeholder:text-black text-lg py-3 px-4 outline-none"
+                    className="w-full bg-slate-200 placeholder:text-black text-lg py-3 px-4 outline-none hidden sm:block"
                     placeholder="Søk..."
                 />
 

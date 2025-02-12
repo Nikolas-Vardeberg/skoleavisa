@@ -10,6 +10,7 @@ const RAW_ARTICLE_QUERY = groq`{
     content[]${RICH_TEXT_QUERY},
     "slug": slug.current,
     publishedAt,
+    title,
 }`;
 
 export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug][0] ${RAW_ARTICLE_QUERY}`;
