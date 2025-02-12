@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Skoleavisen - Open Source CMS for Skoler
 
-## Getting Started
+Velkommen til Skoleavisen, et open-source prosjekt som lar skoler enkelt sette opp og administrere sin egen digitale avis. Dette prosjektet er designet for å være fleksibelt og lett å tilpasse, slik at hver skole kan ha sin unike avis med egne artikler og innhold.
 
-First, run the development server:
+## 🤝 Bidragsytere
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Prosjektet er utviklet av:
+
+- **Nikolas Vardeberg** – Prosjektansvarlig, utvikler og utviklingsleder
+
+- **Alexsander Meinhart** – Designer & Mediadesigner
+
+- **Danil Chepeal** – UI-designer, & Mediadesigner (Sigma)
+
+- **Adiam Gideai** – Utvikler
+
+## 🛠 Teknologier
+
+- **Next.js** – For en rask og SEO-vennlig frontend.
+
+- **Sanity.io** – Headless CMS for innholdshåndtering.
+
+- **Tailwind CSS** – For moderne og tilpassbar styling.
+
+- **Vercel** – Anbefalt hostingplattform for enkel distribusjon.
+
+## 📌 Funksjoner
+
+- **CMS-system**: Administrer artikler, kategorier og brukere direkte fra et enkelt grensesnitt.
+
+- **Sanity.io-integrasjon**: Bruk Sanity som headless CMS for å lagre og administrere innhold.
+
+- **Enkel tilpasning**: Tilpass farger, logo og layout for å matche skolens profil.
+
+- **Responsivt design**: Fungerer sømløst på både desktop og mobil.
+
+- **Rask installasjon**: Sett opp på få minutter med minimale konfigurasjonskrav.
+
+## Kom i gang
+
+### Klon repoet
+
+```
+git clone https://github.com/nikolas-vardeberg/skoleavisen.git
+cd skoleavisen
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installer avhengigheter
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+pnpm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Konfigurer miljøvariabler
+Dette prosjektet krever en tilkobling til Sanity.io. Du må legge til dine egne Sanity-miljøvariabler. Kopier **.env.example** til en ny fil kalt **.env.local** og legg inn dine Sanity API-nøkler.
+Oppdater **.env.local** med dine Sanity API-nøkler:
+```
+NEXT_PUBLIC_SANITY_PROJECT_ID=<your-token>
+NEXT_PUBLIC_SANITY_DATASET="production"
+```
 
-## Learn More
+### Start utviklingsserveren
 
-To learn more about Next.js, take a look at the following resources:
+```
+pnpm dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 Lisens
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Dette prosjektet er open-source og lisensiert under MIT-lisensen. Du står fritt til å bruke, endre og distribuere det videre.

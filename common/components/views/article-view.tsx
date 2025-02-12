@@ -2,7 +2,7 @@
 
 import { Article } from "@/common/types/pages/article.types";
 import SanityImage from "../SanityImage";
-import RichText from "../RIchText";
+import RichText from "../RichText";
 
 export default function ArticleView({ data }: { data: Article }) {
     return(
@@ -15,7 +15,7 @@ export default function ArticleView({ data }: { data: Article }) {
                 width={1200}
                 className="object-cover w-full bg-yellow-200"
             />
-            <div className="flex flex-col max-w-[800px]">
+            <div className="flex flex-col max-w-[800px] mx-auto">
                 <RichText blocks={data.content} />
             </div>
         </div>
