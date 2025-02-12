@@ -3,15 +3,16 @@ import { TransportItemProps } from "../types/block/transport.types";
 import clsx from "clsx";
 import { toPlainText } from "next-sanity";
 import SanityImage from "./SanityImage";
+import { buildUrl } from "../lib/url";
 
 
 const TransportItem = ({ page }: TransportItemProps) => {
     return(
-        <Link href="/" key={page._id} className="flex flex-col">
+        <Link href={buildUrl(page) ?? ""} key={page._id} className="flex flex-col">
             {page.mainImage && (
                 <SanityImage 
                     image={page.mainImage}
-                    height={400}
+                    height={300}
                     width={500}
                     className="object-cover w-full"
                 />

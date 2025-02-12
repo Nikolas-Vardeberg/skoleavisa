@@ -9,13 +9,13 @@ export default function Home() {
   const { data, isPending } = useArticles();
 
   return (
-    <div className="flex flex-col max-w-[1200px] mx-auto py-10">
+    <div className="flex flex-col max-w-[1200px] mx-auto py-10 px-8">
       {isPending ? (
         <div className="flex items-center justify-center">
-            <Loader2 className="animate-spin h-6 w-6 text-gray-500 " />
+          <Loader2 className="animate-spin h-6 w-6 text-gray-500 " />
         </div>
       ): (
-        <div className="grid grid-cols-1 lg:grid-cols-2 justify-between gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-between gap-8">
           {data?.map((page: Page) => (
             <TransportItem page={page} key={page._id} />
           ))}
