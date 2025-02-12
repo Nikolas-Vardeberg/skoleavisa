@@ -76,11 +76,11 @@ html {
 .lead a,
 .lead p,
 .lead li {
-    @apply text-xl text-black font-normal lg:text-[22px]/8;
+    @apply text-xl text-muted-foreground font-normal lg:text-[22px]/8;
 }
 
 p,
 li {
-    @apply text-base/7 text-gray-700 font-normal lg:text-lg/8;
+    @apply text-base/7 text-muted-foreground font-normal lg:text-lg/8;
 }
 

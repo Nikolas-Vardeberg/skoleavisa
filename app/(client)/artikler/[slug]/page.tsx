@@ -1,3 +1,4 @@
+import ArticleView from "@/common/components/views/article-view";
 import { ARTICLE_QUERY } from "@/common/queries/pages/article.queries"
 import { sanityFetch } from "@/sanity/lib/live"
 import { QueryParams } from "next-sanity";
@@ -22,10 +23,6 @@ export default async function ArticlePage(props: Props) {
     if (!initial || !initial.data) return notFound();
 
     return(
-        <div className="flex flex-col max-w-[1200px] mx-auto">
-            <pre>
-                {JSON.stringify(initial.data, undefined, 2)}
-            </pre>
-        </div>
+        <ArticleView data={initial.data} />
     )
 }

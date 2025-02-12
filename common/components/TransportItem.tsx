@@ -18,7 +18,7 @@ const TransportItem = ({ page }: TransportItemProps) => {
                 />
             )}
             <div className="flex flex-col gap-4 py-3">
-                <h4 className="lead text-black dark:text-white">{page.title}</h4>
+                <h4 className="text-3xl text-black underline dark:text-white">{page.title}</h4>
                 {page.entry && (
 					<p className={clsx('line-clamp-3 text-muted-foreground')}>{toPlainText(page.entry)}</p>
 				)}
