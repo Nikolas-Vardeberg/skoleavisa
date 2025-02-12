@@ -18,7 +18,7 @@ export default function Menu() {
     const { setTheme } = useTheme()
 
     return(
-        <header className="bg-white dark:bg-black dark:bg-primary border-b-2 z-10 w-full">
+        <header className="bg-white dark:bg-black dark:bg-grey-200 border-b-2 z-10 w-full">
         <div className="py-5 px-8 max-w-[1220px] mx-auto flex items-center justify-between lg:py-7 gap-x-12">
             <Link href='/' className='flex items-center justify-center lead text-black dark:text-white' aria-label='Hjem'>
                 Skolebladet
