@@ -1,6 +1,7 @@
 import { QueryProvider } from "@/common/providers/query-provider";
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
+import "./globals.css";
 
 const aeronaut = localFont({
   variable: "--font-aeronaut",
