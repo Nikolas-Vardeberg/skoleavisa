@@ -10,7 +10,7 @@ export default function NotFound() {
             <BrowserRouter>
             <div className="flex flex-col items-center justify-center">
                 <h1 className="font-bold italic text-9xl ">404</h1>
-                <p className="text-3xl p-3 font-bold">Der var det visst ikkeno</p>
+                <p className="text-3xl p-3 font-bold">Her var det visst ikkeno</p>
 
                     <Button className="hover:shadow-xl bg-primary text-primary-foreground shadow hover:bg-primary/90">
                 <Link to={"/"} className="font-bold">Home</Link>
