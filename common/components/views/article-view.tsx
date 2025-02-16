@@ -6,6 +6,7 @@ import RichText from "../RichText";
 import { Button } from "../ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Badge } from "../ui/badge";
 
 export default function ArticleView({ data }: { data: Article }) {
     const router = useRouter();
@@ -20,6 +21,13 @@ export default function ArticleView({ data }: { data: Article }) {
             </div>
             <h1 className="text-3xl md:text-5xl">{data.title}</h1>
             <RichText blocks={data.entry ?? []} elementClassName="lead" />
+            <div className="flex flex-grow gap-x-2">
+            {data?.tags?.map((tag) => (
+                <Badge key={tag.title} className="!font-normal">
+                    {tag.title}
+                </Badge>
+            ))}
+            </div>
             <SanityImage 
                 image={data.mainImage}
                 height={700}
