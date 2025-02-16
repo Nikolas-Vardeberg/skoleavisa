@@ -1,5 +1,6 @@
 import { defineType } from "sanity";
 import { image } from "../objects/image.schema";
+import { tags } from "../objects/tags.schema";
 
 
 
@@ -32,6 +33,9 @@ export const article = defineType({
                 maxLength: 155,
             }
         },
+        tags({
+            group: "general"
+        }),
         image({
             name: "mainImage",
             group: "general"

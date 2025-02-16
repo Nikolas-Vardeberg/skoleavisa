@@ -10,7 +10,7 @@ export default async function ClientLayout({
     children: React.ReactNode;
 }>) {
     return(
-        <body>
+        <>
             <ThemeProvider
                 attribute="class"
                 defaultTheme="system"
@@ -20,6 +20,6 @@ export default async function ClientLayout({
                 <Menu />
                 <main>{children}</main>
             </ThemeProvider>
-        </body>
+        </>
     )
 }

@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="no" suppressHydrationWarning className={`${aeronaut.variable}`}>
       <QueryProvider>
-        {children}
+        <body>
+          {children}
+        </body>
       </QueryProvider>
     </html>
   );
