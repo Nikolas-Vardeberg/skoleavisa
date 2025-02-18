@@ -1,3 +1,4 @@
+import TagView from "@/common/components/views/tag-view";
 import { TAG_QUERY } from "@/common/queries/other/tag.queries";
 import { sanityFetch } from "@/sanity/lib/live"
 import { QueryParams } from "next-sanity";
@@ -20,8 +21,6 @@ export default async function TagPage(props: Props) {
     if (!initial || !initial.data) return notFound();
 
     return(
-        <pre>
-            {JSON.stringify(initial.data, undefined, 2)}
-        </pre>
+        <TagView data={initial.data} />
     )
 }
