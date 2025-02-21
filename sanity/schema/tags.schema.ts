@@ -20,6 +20,11 @@ export const tag = defineType({
 			},
 			validation: (Rule) => Rule.required(),
 		},
+		{
+			title: "Beskrivelse",
+            name: "description",
+            type: "simpleRichText",
+        },
 	],
 	preview: {
 		select: {

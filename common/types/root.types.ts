@@ -36,4 +36,5 @@ export type SanityContentTypeBase<T extends string> = Override<
 export type Tag = {
 	title: string;
 	slug: string;
+	description: RichtTextType;
 }
