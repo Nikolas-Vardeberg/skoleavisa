@@ -13,6 +13,10 @@ const RAW_ARTICLE_QUERY = groq`{
     publishedAt,
     title,
     tags[]-> ${TAGS_QUERY},
+}`;
+
+export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug][0] {
+    ...${RAW_ARTICLE_QUERY},
     "related": *[_type == "activity" && (!defined($slug) || slug.current != $slug) && count((tags[]._ref)[@ in ^.tags[]._ref]) > 0]{
             _id,
             _type,
@@ -23,8 +27,6 @@ const RAW_ARTICLE_QUERY = groq`{
             "tagCount": count((tags[]._ref)[@ in ^.tags[]._ref])
         }| order(tagCount desc, _createdAt desc) [0...3]
 }`;
-
-export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug][0] ${RAW_ARTICLE_QUERY}`;
 
 
 export const ARTICLES_QUERY = groq`*[_type == "article" && publishedAt < now()] ${RAW_ARTICLE_QUERY}`;

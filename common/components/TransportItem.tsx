@@ -5,17 +5,25 @@ import { toPlainText } from "next-sanity";
 import SanityImage from "./SanityImage";
 import { buildUrl } from "../lib/url";
 
-
 const TransportItem = ({ page }: TransportItemProps) => {
     return(
-        <Link href={buildUrl(page) ?? ""} key={page._id} className="flex flex-col group">
+        <Link href={buildUrl(page) ?? ""} key={page._id} className="flex flex-col group overflow-hidden">
             {page.mainImage && (
-                <SanityImage 
-                    image={page.mainImage}
-                    height={300}
-                    width={500}
-                    className="object-cover w-full group-hover:border-dashed border"
-                />
+                <div className="relative">
+                    <SanityImage 
+                        image={page.mainImage}
+                        height={300}
+                        width={500}
+                        className="object-cover w-full group-hover:border-dashed border"
+                    />
+                    <div className="absolute top-0 left-0 text-foreground flex-grow flex gap-x-2">
+                        {page.tags?.map((tag) => (
+                            <Link href={tag.slug} key={tag.slug} className="p-2 bg-green-200">
+                                {tag.title}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             )}
             <div className="flex flex-col gap-4 py-3">
                 <h4 className="text-3xl text-black underline dark:text-white group-hover:no-underline">{page.title}</h4>
