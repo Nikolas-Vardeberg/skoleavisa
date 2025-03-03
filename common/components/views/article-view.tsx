@@ -3,18 +3,13 @@
 import { Article } from "@/common/types/pages/article.types";
 import SanityImage from "../SanityImage";
 import RichText from "../RichText";
-import { Button } from "../ui/button";
-import { ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Badge } from "../ui/badge";
 import TransportItem from "../TransportItem";
 import Link from "next/link";
 import { Card } from "../ui/card";
 import OnThisPage from "../on-this-page";
 
 export default function ArticleView({ data }: { data: Article }) {
-    const router = useRouter();
-
     return(
         <>
        <div className="bg-blue-200">
@@ -22,9 +17,11 @@ export default function ArticleView({ data }: { data: Article }) {
                 <div className="flex flex-col gap-8 max-w-[1200px] mx-auto px-8">
                    
                     <div className="grid grid-cols-1 md:grid-cols-6 w-full justify-between gap-8">
-                        <Card className="h-fit hidden top-12 sticky lg:flex lg:col-span-2">
-                            <OnThisPage value={data.content} />
-                        </Card>
+                        <div className="h-fit hidden top-10 sticky lg:flex lg:col-span-2 flex-col gap-6">
+                            <Card>
+                                <OnThisPage value={data.content} />
+                            </Card>
+                        </div>
                         <div className="flex flex-col gap-8 col-span-full lg:col-span-4">
                             <Card className="w-full h-fit rounded-xl overflow-hidden ">
                                 <SanityImage 
