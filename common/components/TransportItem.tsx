@@ -9,24 +9,22 @@ const TransportItem = ({ page }: TransportItemProps) => {
     return(
         <Link href={buildUrl(page) ?? ""} key={page._id} className="flex flex-col group overflow-hidden">
             {page.mainImage && (
-                <div className="relative">
-                    <SanityImage 
-                        image={page.mainImage}
-                        height={300}
-                        width={500}
-                        className="object-cover w-full group-hover:border-dashed border"
-                    />
-                    <div className="absolute top-0 left-0 text-foreground flex-grow flex gap-x-2">
+                <SanityImage 
+                    image={page.mainImage}
+                    height={300}
+                    width={500}
+                    className="object-cover w-full group-hover:border-dashed border"
+                />
+            )}
+            <div className="flex flex-col gap-4 py-3">
+                <div className="text-foreground flex-grow flex gap-x-2">
                         {page.tags?.map((tag) => (
                             <Link href={tag.slug} key={tag.slug} className="p-2 bg-green-200">
                                 {tag.title}
                             </Link>
                         ))}
                     </div>
-                </div>
-            )}
-            <div className="flex flex-col gap-4 py-3">
-                <h4 className="text-3xl text-black underline dark:text-white group-hover:no-underline">{page.title}</h4>
+                <h4 className="text-3xl text-black  dark:text-white group-hover:underline">{page.title}</h4>
                 {page.entry && (
 					<p className={clsx('line-clamp-3 text-muted-foreground')}>{toPlainText(page.entry)}</p>
 				)}
