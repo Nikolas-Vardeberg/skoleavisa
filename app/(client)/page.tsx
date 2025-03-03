@@ -13,6 +13,7 @@ export default function Home() {
   const { data, isPending } = useArticles();
 
   const renderHero = () => (
+    <>
     <div className="bg-blue-200 py-12 sm:py-20">
       <div className="flex mx-auto max-w-[1200px] px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between w-full gap-8">
@@ -38,6 +39,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   )
 
   const renderFeatures = () => (

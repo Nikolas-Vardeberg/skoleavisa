@@ -7,4 +7,5 @@ export type Article = BasePage & {
     content: RichtTextType;
     mainImage: AvisaImage;
     tags?: Tag[];
+    related?: Article[];
 } & SanityContentTypeBase<'article'>;

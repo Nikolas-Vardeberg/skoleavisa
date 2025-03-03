@@ -17,11 +17,12 @@ const RAW_ARTICLE_QUERY = groq`{
 
 export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug][0] {
     ...${RAW_ARTICLE_QUERY},
-    "related": *[_type == "activity" && (!defined($slug) || slug.current != $slug) && count((tags[]._ref)[@ in ^.tags[]._ref]) > 0]{
+    "related": *[_type == "article" && (!defined($slug) || slug.current != $slug) && count((tags[]._ref)[@ in ^.tags[]._ref]) > 0]{
             _id,
             _type,
             "slug": slug.current,
             title,
+            mainImage ${IMAGE_QUERY},
             tags[]-> ${TAGS_QUERY},
             entry[] ${RICH_TEXT_QUERY},
             "tagCount": count((tags[]._ref)[@ in ^.tags[]._ref])
