@@ -8,13 +8,7 @@ export type TransportHeaderProps = {
 
 export type ITransportBlock = {
 	_type: 'transportBlocks';
-	flipHorizontal?: boolean;
 	pages: Page;
-	variant?: string;
-	options?: {
-		hideLabel: boolean;
-		hideTags: boolean;
-	};
 } & TransportHeaderProps;
 
 export interface TransportGridProps {
@@ -29,4 +23,5 @@ export interface GridProps {
 
 export interface TransportItemProps {
 	page: Page;
+	hideImage?: boolean;
 }
