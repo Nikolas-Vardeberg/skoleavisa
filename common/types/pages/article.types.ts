@@ -1,4 +1,4 @@
-import { BasePage, AvisaImage, RichtTextType, SanityContentTypeBase } from "../root.types";
+import { BasePage, AvisaImage, RichtTextType, SanityContentTypeBase, Tag } from "../root.types";
 
 
 export type Article = BasePage & {
@@ -6,4 +6,6 @@ export type Article = BasePage & {
     entry: RichtTextType;
     content: RichtTextType;
     mainImage: AvisaImage;
+    tags?: Tag[];
+    related?: Article[];
 } & SanityContentTypeBase<'article'>;

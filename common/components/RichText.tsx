@@ -2,6 +2,7 @@ import { PortableText as NativePortableText } from '@portabletext/react';
 import { ReactNode } from "react";
 import { RichtTextType } from '../types/root.types';
 import clsx from 'clsx';
+import { slugify } from '../utils/string';
 
 
 export type SimpleRichTextProps = {
@@ -35,8 +36,12 @@ const PortableTextWithComponents = ({ blocks, elementClassName, id, ...props }: 
                 value={blocks}
                 components={{
                     block: {
-                        normal: ({ children }) => <p className={clsx("p-p", elementClassName)}>{children}</p>
-
+                        normal: ({ children }) => <p className={clsx("p-p", elementClassName)}>{children}</p>,
+                        h2: ({ children, value }) => {
+                            const text = value?.children?.[0]?.text || '';
+                            const slug = slugify(text);
+                            return <h2 id={slug} className={clsx("p-h2", elementClassName)}>{children}</h2>;
+                        },
                     },
                     list: {
                         bullet: ({ children, value }) => {

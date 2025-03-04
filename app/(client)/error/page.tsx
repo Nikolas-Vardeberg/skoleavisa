@@ -5,16 +5,17 @@ import { ArrowLeft, Home } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export default function Notfound() {
+export default function ErrorPage() {
     const router = useRouter();
 
     return(
         <div className="h-screen flex flex-col items-center justify-center">
             <h1 className="text-4xl md:text-6xl font-bold text-black mb-2">
-                404
+                Oops! Noe gikk galt
             </h1>
+
             <p className="text-2xl text-black mb-5">
-                Siden du leter etter finnes ikke.
+                Noe gikk galt prøv igjen eller ta kontakt med oss 
             </p>
 
             <div className="flex items-center justify-center gap-x-3">

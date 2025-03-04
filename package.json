@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/deepseek": "^0.1.12",
+    "@ai-sdk/react": "^1.1.19",
     "@portabletext/react": "^3.2.1",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
@@ -18,7 +20,10 @@
     "@radix-ui/react-tooltip": "^1.1.8",
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.49.1",
     "@tanstack/react-query": "^5.66.0",
+    "ai": "^4.1.47",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
