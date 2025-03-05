@@ -9357,6 +9357,12 @@ snapshots:
 
   '@types/uuid@8.3.4': {}
 
+  '@types/webidl-conversions@7.0.3': {}
+
+  '@types/whatwg-url@11.0.5':
+    dependencies:
+      '@types/webidl-conversions': 7.0.3
+
   '@types/ws@8.5.14':
     dependencies:
       '@types/node': 20.17.17
