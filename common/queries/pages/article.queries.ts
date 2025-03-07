@@ -9,7 +9,7 @@ const RAW_ARTICLE_QUERY = groq`{
     mainImage ${IMAGE_QUERY},
     entry[]${RICH_TEXT_QUERY},
     content[]${RICH_TEXT_QUERY},
-    "slug": slug.current,
+    "slug": slug.current,   
     publishedAt,
     title,
     tags[]-> ${TAGS_QUERY},
