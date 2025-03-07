@@ -26,7 +26,7 @@ export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug]
             tags[]-> ${TAGS_QUERY},
             entry[] ${RICH_TEXT_QUERY},
             "tagCount": count((tags[]._ref)[@ in ^.tags[]._ref])
-        }| order(tagCount desc, _createdAt desc) [0...4]
+        }| order(tagCount desc, _createdAt desc) [0...3]
 }`;
 
 
