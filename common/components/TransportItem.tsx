@@ -9,8 +9,8 @@ import { Badge } from "./ui/badge";
 
 const TransportItem = ({ page, hideImage }: TransportItemProps) => {
     return(
-        <Card className="overflow-hidden">
         <Link href={buildUrl(page) ?? ""} key={page._id} className="flex flex-col group overflow-hidden">
+        <Card>
             {hideImage ?? (
                 <div className="relative">
                     <SanityImage 
@@ -25,9 +25,7 @@ const TransportItem = ({ page, hideImage }: TransportItemProps) => {
                 <div className="text-foreground flex-grow flex gap-x-2">
                         {page.tags?.map((tag) => (
                             <Badge key={tag.slug}>
-                                <Link href={tag.slug}>
-                                    {tag.title}
-                                </Link>
+                                {tag.title}
                             </Badge>
                         ))}
                     </div>
@@ -37,8 +35,8 @@ const TransportItem = ({ page, hideImage }: TransportItemProps) => {
 					<p className={clsx('line-clamp-3 text-muted-foreground')}>{toPlainText(page.entry)}</p>
 				)}
             </div>
-        </Link>
         </Card>
+        </Link>
     )
 }
 
