@@ -12,7 +12,7 @@ export function SignUpForm({
   return (
     <form className={cn("flex flex-col gap-6", className)} {...props}>
       <div className="flex flex-col items-center gap-2 text-center">
-        <h1 className="text-2xl font-bold">Registrer deg</h1>
+        <h1 className="text-2xl">Registrer deg</h1>
         <p className="text-balance text-sm text-muted-foreground">
             Ved å registrere deg godtar du våre <Link href="/" className="underline">vilkår og betingelser</Link>
         </p>
@@ -26,7 +26,7 @@ export function SignUpForm({
           <div className="flex items-center">
             <Label htmlFor="password">Passord</Label>
           </div>
-          <Input id="password" name="password" type="password" required />
+          <Input id="password" name="password" placeholder="Passord..." type="password" required />
         </div>
         <Button formAction={signup} type="submit" className="w-full">
           Registrer
@@ -45,7 +45,7 @@ export function SignUpForm({
       </div>
       <div className="text-center text-sm">
         Har du allerede en bruker?{" "}
-        <Link href="/sign-in" className="underline underline-offset-4">
+        <Link href="/sign-in" className="underline underline-offset-4 hover:underline">
           Login
         </Link>
       </div>
