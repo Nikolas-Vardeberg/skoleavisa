@@ -1,14 +1,21 @@
 "use client"
 
-import { MenuIcon, Moon, SearchIcon, Sun, User } from "lucide-react";
+import { MenuIcon, Moon, SearchIcon, Settings, Sun, User, Bookmark, X } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { useTheme } from "next-themes";
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "./ui/command";
+import { Loader2 } from "lucide-react";
+import SanityImage from "@/common/components/SanityImage";
+import useArticles from "../hook/use-articles";
+import { buildUrl } from "@/common/lib/url";
 
 export default function Menu() {
-    const { setTheme, theme } = useTheme()
-    
+    const { setTheme, theme } = useTheme();
+    const [open, setOpen] = useState(false);
+    const { data, isPending } = useArticles();
+
     return(
         <header className="bg-background border-b-2 z-10 w-full">
         <div className="py-5 px-8 max-w-[1220px] mx-auto flex items-center justify-between lg:py-7 gap-x-12">
@@ -17,16 +24,59 @@ export default function Menu() {
             </Link>
 
             <div className="flex items-center justify-center gap-x-8">
-                <input 
-                    className="w-full bg-slate-200 placeholder:!text-black dark:placeholder:!text-black text-lg py-3 px-4 outline-none hidden sm:block"
-                    placeholder="Søk..."
-                />
+                {open ? (
+                    <X onClick={() => setOpen(false)} />
+                ): (
+                    <SearchIcon onClick={() => setOpen(true)} />
+                )}
 
-                <Link href="/sok">
-                    <span className="flex items-center justify-center !text-black dark:!text-white lead gap-x-2">
-                        <SearchIcon className="size-6" />
-                    </span>
-                </Link>
+                <CommandDialog open={open} onOpenChange={setOpen}>
+                    <CommandInput 
+                        placeholder="Søk på hele nettstedet" 
+                    />
+                    <CommandList>
+                        <CommandEmpty>Ingen treff</CommandEmpty>
+                        
+                        <CommandGroup heading="Artikler">
+                            {isPending ? (
+                                <Loader2 className="animate-spin size-5 text-grey-700" /> 
+                            ): (
+                                <>
+                                    {data.map((article: any) => (
+                                        <CommandItem key={article._id}>
+                                            <Link href={buildUrl(article) ?? ""} className="flex items-center gap-4">
+                                                <SanityImage
+                                                    image={article.mainImage}
+                                                    width={40}
+                                                    height={40}
+                                                    className="rounded-md object-cover"
+                                                />
+                                                <span>{article.title}</span>
+                                            </Link>
+                                        </CommandItem>
+                                    ))}
+                                </>
+                            )}
+                        </CommandGroup>
+
+                        <CommandSeparator />
+
+                        <CommandGroup heading="Innstillinger">
+                            <CommandItem>
+                                <User />
+                                <span>Profil</span>
+                            </CommandItem>
+                            <CommandItem>
+                                <Bookmark />
+                                <span>Bookmarked</span>
+                            </CommandItem>
+                            <CommandItem>
+                                <Settings />
+                                <span>Innstillinger</span>
+                            </CommandItem>
+                        </CommandGroup>
+                    </CommandList>
+                </CommandDialog>
 
                 <button type="button">
                     <span className="flex items-center justify-center !text-black dark:!text-white lead gap-x-2">

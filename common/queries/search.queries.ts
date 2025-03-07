@@ -1,10 +1,8 @@
 import { groq } from 'next-sanity';
-import { PAGE_REFERENCE_QUERY } from './pages/page.queries';
 import { TAGS_QUERY } from './other/tag.queries';
 
 export const SEARCH_LIMIT = 5;
 
-// Update the PAGE_REFERENCE_QUERY to include tags without slug dependency
 const SEARCH_PAGE_QUERY = groq`{
     _id,
     title,
