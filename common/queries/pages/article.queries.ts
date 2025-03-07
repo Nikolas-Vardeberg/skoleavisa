@@ -9,7 +9,7 @@ const RAW_ARTICLE_QUERY = groq`{
     mainImage ${IMAGE_QUERY},
     entry[]${RICH_TEXT_QUERY},
     content[]${RICH_TEXT_QUERY},
-    "slug": slug.current,
+    "slug": slug.current,   
     publishedAt,
     title,
     tags[]-> ${TAGS_QUERY},
@@ -26,7 +26,7 @@ export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug]
             tags[]-> ${TAGS_QUERY},
             entry[] ${RICH_TEXT_QUERY},
             "tagCount": count((tags[]._ref)[@ in ^.tags[]._ref])
-        }| order(tagCount desc, _createdAt desc) [0...3]
+        }| order(tagCount desc, _createdAt desc) [0...4]
 }`;
 
 
