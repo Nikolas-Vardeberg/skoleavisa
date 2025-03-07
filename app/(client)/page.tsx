@@ -25,9 +25,9 @@ export default function Home() {
   const renderHero = () => (
     <div className="py-12 sm:py-20 px-8">
       {data && data.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center p-8 rounded-br-3xl rounded-tl-3xl bg-white justify-between gap-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center p-8 rounded-xl bg-background justify-between gap-8 w-full">
           <div className="flex-col gap-8 h-full flex items-start justify-center px-4">
-            <h2 className="text-3xl sm:text-5xl text-black hover:underline decoration-blue-500">{data[0].title}</h2>
+            <h2 className="text-3xl sm:text-5xl text-foreground hover:underline decoration-blue-500">{data[0].title}</h2>
             <p className="text-muted-foreground">{toPlainText(data[0].entry)}</p>
             <Link href={`/artikler/${data[0].slug}`}>
               <Button
