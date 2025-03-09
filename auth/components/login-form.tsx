@@ -2,7 +2,7 @@ import { cn } from "@/common/lib/utils"
 import { Button } from "@/common/components/ui/button"
 import { Input } from "@/common/components/ui/input"
 import { Label } from "@/common/components/ui/label"
-import { login, signup } from "../lib/actions"
+import { login } from "../lib/actions"
 import Link from "next/link"
 
 export function LoginForm({
@@ -45,7 +45,7 @@ export function LoginForm({
       </div>
       <div className="text-center text-sm">
         Har du ikke en bruker?{" "}
-        <Link href="/sign-in" className="underline underline-offset-4 hover:underline">
+        <Link href="/sign-up" className="underline underline-offset-4 hover:underline">
           Registrer deg
         </Link>
       </div>
