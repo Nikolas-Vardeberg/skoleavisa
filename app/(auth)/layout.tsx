@@ -3,12 +3,18 @@ import React from 'react'
 import { ThemeProvider } from "@/common/components/theme-provider";
 import { SidebarProvider, SidebarTrigger } from "@/common/components/ui/sidebar";
 import { AppSidebar } from "@/common/components/Sidebar";
+import { createClient } from '@/common/utils/supabase/server'
 
 export default async function AuthLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+      const supabase = await createClient()
+    
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
     return(
         <>
         <SidebarProvider>
@@ -18,7 +24,9 @@ export default async function AuthLayout({
                 enableSystem
                 disableTransitionOnChange
             >
-                <AppSidebar />
+                <AppSidebar 
+                    email={user?.email || ""}
+                />
                 <main>
                     <SidebarTrigger />
                     {children}

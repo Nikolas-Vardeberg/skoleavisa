@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { PlayCircle, Layers, FileText, Settings, ChevronDown, ChevronRight, Database } from "lucide-react"
+import { User, Bookmark, Settings, ChevronDown, ChevronRight } from "lucide-react"
 
 import {
   Sidebar,
@@ -9,7 +9,6 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarGroupLabel,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -21,21 +20,28 @@ import {
 import { Avatar, AvatarImage } from "@/common/components/ui/avatar"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/common/components/ui/collapsible"
 import { useState } from "react"
+import Link from "next/link"
 
-export function AppSidebar() {
+type AppSidebarProps = {
+  email: string;
+};
+
+export function AppSidebar(props: AppSidebarProps) {
   const [openSettings, setOpenSettings] = useState(true);
 
   return (
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Platform</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-lg font-semibold">
+            <Link href="/">Skolebladet</Link>
+          </SidebarGroupLabel>
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
                 <a href="#">
-                  <PlayCircle className="size-4" />
-                  <span>Playground</span>
+                  <User className="size-4" />
+                  <span>Account</span>
                   <ChevronRight className="ml-auto size-4" />
                 </a>
               </SidebarMenuButton>
@@ -43,17 +49,8 @@ export function AppSidebar() {
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
                 <a href="#">
-                  <Layers className="size-4" />
-                  <span>Models</span>
-                  <ChevronRight className="ml-auto size-4" />
-                </a>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild>
-                <a href="#">
-                  <FileText className="size-4" />
-                  <span>Documentation</span>
+                  <Bookmark className="size-4" />
+                  <span>Bookmarks</span>
                   <ChevronRight className="ml-auto size-4" />
                 </a>
               </SidebarMenuButton>
@@ -108,7 +105,7 @@ export function AppSidebar() {
                 </Avatar>
                 <div className="flex flex-col gap-0.5 leading-none">
                   <span className="font-medium">shadcn</span>
-                  <span className="text-xs text-muted-foreground">m@example.com</span>
+                  <span className="text-xs text-muted-foreground">{props.email}</span>
                 </div>
               </a>
             </SidebarMenuButton>
