@@ -26,6 +26,7 @@ export default async function AuthLayout({
             >
                 <AppSidebar 
                     email={user?.email || ""}
+                    username={user?.user_metadata.display_name || ""}
                 />
                 <main>
                     <SidebarTrigger />

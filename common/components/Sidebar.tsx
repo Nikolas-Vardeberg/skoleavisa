@@ -24,6 +24,7 @@ import Link from "next/link"
 
 type AppSidebarProps = {
   email: string;
+  username: string;
 };
 
 export function AppSidebar(props: AppSidebarProps) {
@@ -39,7 +40,7 @@ export function AppSidebar(props: AppSidebarProps) {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
-                <a href="#">
+                <a href="/account">
                   <User className="size-4" />
                   <span>Account</span>
                   <ChevronRight className="ml-auto size-4" />
@@ -48,7 +49,7 @@ export function AppSidebar(props: AppSidebarProps) {
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton asChild>
-                <a href="#">
+                <a href="/account/bookmarks">
                   <Bookmark className="size-4" />
                   <span>Bookmarks</span>
                   <ChevronRight className="ml-auto size-4" />
@@ -104,7 +105,7 @@ export function AppSidebar(props: AppSidebarProps) {
                   <AvatarImage src="/placeholder.svg?height=32&width=32" />
                 </Avatar>
                 <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-medium">shadcn</span>
+                  <span className="font-medium">{props.username}</span>
                   <span className="text-xs text-muted-foreground">{props.email}</span>
                 </div>
               </a>

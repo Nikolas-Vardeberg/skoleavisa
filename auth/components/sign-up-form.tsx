@@ -19,6 +19,10 @@ export function SignUpForm({
       </div>
       <div className="grid gap-6">
         <div className="grid gap-2">
+          <Label htmlFor="username">Brukernavn</Label>
+          <Input id="username" name="username" type="username" placeholder="Brukernavn..." required />
+        </div>
+        <div className="grid gap-2">
           <Label htmlFor="email">Email</Label>
           <Input id="email" name="email" type="email" placeholder="email@example.com" required />
         </div>
