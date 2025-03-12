@@ -10,6 +10,7 @@ import { Loader2 } from "lucide-react";
 import SanityImage from "@/common/components/SanityImage";
 import useArticles from "../hook/use-articles";
 import { buildUrl } from "@/common/lib/url";
+import Image from "next/image";
 
 export default function Menu() {
     const { setTheme, theme } = useTheme();
@@ -19,9 +20,15 @@ export default function Menu() {
     return(
         <header className="bg-background border-b-2 z-10 w-full">
         <div className="py-5 px-8 max-w-[1220px] mx-auto flex items-center justify-between lg:py-7 gap-x-12">
-            <Link href='/' className='flex items-center justify-center lead !text-black dark:!text-white' aria-label='Hjem'>
-                Skolebladet
-            </Link>
+
+        <Link href='/' className='flex items-center justify-center lead !text-black dark:!text-white' aria-label='Hjem'>
+            <Image 
+              src={theme === "dark" ? "/skolebladet-invert.svg" : "/skolebladet.svg"}
+              alt="Skolebladet"
+              width={200}
+              height={100}
+            />
+        </Link>
 
             <div className="flex items-center justify-center gap-x-8">
                 {open ? (
