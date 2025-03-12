@@ -22,8 +22,8 @@ export default function ArticleView({ data }: { data: Article }) {
                 <div className="flex flex-col gap-8 max-w-[1200px] mx-auto px-8">
                    
                     <div className="grid grid-cols-1 md:grid-cols-6 w-full justify-between gap-8">
-                        <div className="flex flex-col gap-8 col-span-full lg:col-span-4">
-                            <Card className="w-full h-fit rounded-xl overflow-hidden ">
+                        <div className="flex flex-col gap-12 col-span-full lg:col-span-4">
+                            <Card className="w-full h-fit rounded-xl overflow-hidden">
                                 <div className="relative">
                                     <SanityImage 
                                         image={data.mainImage}
@@ -38,11 +38,11 @@ export default function ArticleView({ data }: { data: Article }) {
                                 </div>
                              
 
-                                <div className="p-4 flex flex-col gap-4">
+                                <div className="p-4 flex flex-col gap-8">
                                     <div className="text-foreground flex-grow flex gap-x-2">
                                         {data.tags?.map((tag) => (
                                             <Badge key={tag.slug}>
-                                                <Link href={tag.slug}>
+                                                <Link href={`/${tag.slug}`}>
                                                     {tag.title}
                                                 </Link>
                                             </Badge>
