@@ -85,12 +85,6 @@ export default function Menu() {
                     </CommandList>
                 </CommandDialog>
 
-                <button type="button">
-                    <span className="flex items-center justify-center !text-black dark:!text-white lead gap-x-2">
-                        <MenuIcon className="size-6" />
-                    </span>
-                </button>
-
                 <Link href="/sign-in">
                     <span className="flex items-center justify-center !text-black dark:!text-white lead gap-x-2">
                         <User className="size-6" />
