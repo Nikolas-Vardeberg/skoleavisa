@@ -48,7 +48,7 @@ export default function Summary({ content }: { content: any[] }) {
     }, [content]);
 
     return (
-        <div className="w-full mx-auto relative bg-primary">
+        <div className="w-full mx-auto relative bg-blue-200 dark:bg-gray-900 border borde-gray-200">
             <div className="p-8 flex flex-col gap-6">
                 <motion.div
                     initial={{ maxHeight: 180 }}
@@ -62,7 +62,7 @@ export default function Summary({ content }: { content: any[] }) {
                     }}
                     className="overflow-hidden flex flex-col gap-4 relative"
                 >
-                    <h3 className="text-primary-foreground text-2xl">Kort forklart</h3>
+                    <h3 className="text-black dark:text-primary text-2xl">Kort forklart</h3>
 
                     <div className="flex flex-col gap-4" ref={ref}>
                         {isLoading ? (
@@ -73,7 +73,7 @@ export default function Summary({ content }: { content: any[] }) {
                             points.map((point, index) => (
                                 <li key={index} className="flex gap-2">
                                     <span className="text-blue-900 font-bold">&#8226;</span>
-                                    <span className="text-black">
+                                    <span className="text-black dark:text-primary">
                                         {point}
                                     </span>
                                 </li>
