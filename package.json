@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/azure": "^1.2.2",
     "@ai-sdk/deepseek": "^0.1.12",
     "@ai-sdk/react": "^1.1.19",
     "@portabletext/react": "^3.2.1",
@@ -31,6 +32,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.0",
+    "framer-motion": "^12.5.0",
     "lucide-react": "^0.475.0",
     "next": "15.2.1",
     "next-sanity": "9",
@@ -40,6 +42,7 @@
     "react-router": "^7.1.5",
     "react-router-dom": "^7.1.5",
     "sanity": "3",
+    "sonner": "^2.0.1",
     "styled-components": "6",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7"
