@@ -58,32 +58,23 @@ export default function ArticleView({ data }: { data: Article }) {
                             </Card>
 
 
-                            <Card>
-                                <OnThisPage value={data.content} />
-                            </Card>
-                            <Card className="w-full flex flex-col gap-5 rounded-xl overflow-hidden p-6">
-                                <div className="flex justify-between items-center">
-                                    <h4 className="text-xl md:text-2xl">Les relaterte artikler</h4>
-                                    <Button variant="link" size="icon" className="rounded-full">
-                                        Les mer
-                                    </Button>
-                                </div>
-                                <div className="grid grid-cols-1 w-full justify-between gap-8">
-                                    {data.related?.map((article) => (
-                                        <Link href={buildUrl(article) ?? ""} className="flex justify-between gap-2 group">
-                                            <SanityImage 
-                                                image={article.mainImage}
-                                                height={100}
-                                                width={100}
-                                            />
-                                            <div className="flex flex-col gap-2">
-                                                <h4 className="group-hover:underline decoration-blue-500 underline-offset-4">{article.title}</h4>
-                                                <p className="text-sm line-clamp-2">{toPlainText(article.entry)}</p>
+                             {/* Comments */}
+                             <Card className="w-full flex flex-col gap-5 rounded-xl overflow-hidden p-6 overflow-y-auto">
+                                    <h4 className="text-xl md:text-2xl">Kommentarer</h4>
+                                    <div className="flex flex-col gap-4">
+                                        <div className="flex flex-col gap-2">
+                                            <div className="flex items-start gap-4">
+                                                <div className="flex-shrink-0">
+                                                    <img src="https://github.com/shadcn.png" alt="User Avatar" className="w-10 h-10 rounded-full" />
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <p className="text-black">Username</p>
+                                                    <p className="text-gray-600">This is a comment from a user. It can be a question, feedback, or any other type of interaction.</p>
+                                                </div>
                                             </div>
-                                        </Link>
-                                    ))}
-                                </div>
-                            </Card>
+                                        </div>
+                                    </div>
+                                </Card>
                         </div>
 
                         <div className="h-fit hidden top-10 sticky lg:flex lg:col-span-2 flex-col gap-6">

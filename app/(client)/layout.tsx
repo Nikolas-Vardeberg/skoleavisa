@@ -1,4 +1,3 @@
-
 import Menu from "@/common/components/Menu";
 import "./globals.css";
 import React from 'react'
